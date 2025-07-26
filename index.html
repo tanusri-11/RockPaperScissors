@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rock Paper Scissors Game</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <div class="game-container">
+        <h1>⚡ Timed Battle Arena ⚡</h1>
+
+        <div class="game-settings">
+            <div class="setting-group">
+                <label for="score-limit">Points to Win:</label>
+                <input type="number" id="score-limit" value="5" min="1" max="20" />
+            </div>
+        </div>
+
+        <div class="win-condition-text">
+            Whoever wins <span id="win-condition-display">5</span> points is the winner! ⚡
+        </div>
+
+        <div class="timer-display" id="timer-display">⏱️</div>
+        <div class="game-status" id="game-status">Set your winning rounds and click START BATTLE!</div>
+
+        <div class="battle-arena">
+            <div class="player-section">
+                <h3>You</h3>
+                <div class="choice-display" id="player-choice">❓</div>
+            </div>
+
+            <div class="vs-divider">VS</div>
+
+            <div class="computer-section">
+                <h3>Computer</h3>
+                <div class="choice-display" id="computer-choice">❓</div>
+            </div>
+        </div>
+
+        <div class="buttons">
+            <button class="choice-btn" id="rock" disabled>✊</button>
+            <button class="choice-btn" id="paper" disabled>✋</button>
+            <button class="choice-btn" id="scissors" disabled>✌️</button>
+        </div>
+
+        <div class="result" id="result">Ready for battle?</div>
+
+        <div class="scoreboard">
+            <div class="score-item">
+                <div class="score-label">Your Score</div>
+                <div class="score-value" id="user-score">0</div>
+            </div>
+            <div class="score-item">
+                <div class="score-label">Computer Score</div>
+                <div class="score-value" id="computer-score">0</div>
+            </div>
+        </div>
+
+        <div class="game-controls">
+            <button class="control-btn start" id="start-btn">START BATTLE</button>
+            <button class="control-btn pause" id="pause-btn">PAUSE GAME</button>
+            <button class="control-btn" id="reset-btn">RESET GAME</button>
+        </div>
+
+        <div id="final-result"></div>
+    </div>
+
+    <!-- Popup Modal -->
+    <div class="popup-overlay" id="popup-overlay">
+        <div class="popup-modal">
+            <div class="popup-title" id="popup-title">🏆 VICTORY!</div>
+            <div class="popup-score" id="popup-score">You won 5-3!</div>
+            <div class="popup-message" id="popup-message">
+                Congratulations! You dominated the battlefield!<br />
+                Ready for another epic battle?
+            </div>
+            <div class="popup-buttons">
+                <button class="popup-btn play-again" id="popup-play-again">Play Again</button>
+                <button class="popup-btn close" id="popup-close">Close</button>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="index.js"></script>
+</body>
+
+</html>
